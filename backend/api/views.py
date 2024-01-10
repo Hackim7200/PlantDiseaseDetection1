@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.decorators import api_view
+from rest_framework import status
+
 
 
 # Create your views here.
@@ -13,11 +14,17 @@ def hello(request):
 def home(request):
     return Response({'res':'hello'})
 
-@api_view(['GET'])
+@api_view(['POST'])
 def login(request):
-    return Response({'res':'hello'})
+    email = request.POST["email"]
+    password = request.POST["password"]
+    
+    return Response({
+        "email":email,
+        "password":password,
+    })
 
-@api_view(['GET'])
+@api_view(['POST'])
 def register(req):
     return Response({'res':'hello'})
 
