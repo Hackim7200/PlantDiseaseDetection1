@@ -4,4 +4,12 @@ from django.http import HttpResponse
 
 def hello(req):
     return HttpResponse("Hello")
+
+def home(req):
+    return HttpResponse("Home")
     
+def login(req):
+    return HttpResponse("login")
+
+def register(req):
+    return HttpResponse("register")
